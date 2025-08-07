@@ -4,7 +4,7 @@ import students.StudentDAO;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         Scanner sc = new Scanner(System.in);
         StudentDAO dao = new StudentDAO();
 
@@ -19,15 +19,15 @@ public class Main {
 
             if (ch == 1) {
                 Student s = new Student();
-                System.out.print("Roll: "); s.setRoll(sc.nextInt());
-                sc.nextLine(); // flush newline
+//                System.out.print("Roll: "); s.setRoll(sc.nextInt());
+                sc.nextLine();
                 System.out.print("Name: "); s.setName(sc.nextLine());
                 System.out.print("City: "); s.setCity(sc.nextLine());
-                System.out.print("Dept No: "); s.setDeptno(sc.nextInt());
+                System.out.print("Dept No(10,20,30, or 40): "); s.setDeptNo(sc.nextInt());
                 dao.addStudent(s);
             } else if (ch == 2) {
                 for (Student s : dao.getAllStudents()) {
-                    System.out.println(s.getRoll() + " " + s.getName() + " " + s.getCity() + " " + s.getDeptno());
+                    System.out.println(s.getRoll() + " " + s.getName() + " " + s.getCity() + " " + s.getDeptNo());
                 }
             } else if (ch == 3) {
                 Student s = new Student();
@@ -35,7 +35,7 @@ public class Main {
                 sc.nextLine();
                 System.out.print("New Name: "); s.setName(sc.nextLine());
                 System.out.print("New City: "); s.setCity(sc.nextLine());
-                System.out.print("New Dept No: "); s.setDeptno(sc.nextInt());
+                System.out.print("New Dept No: "); s.setDeptNo(sc.nextInt());
                 dao.updateStudent(s);
             } else if (ch == 4) {
                 System.out.print("Enter roll to delete: ");

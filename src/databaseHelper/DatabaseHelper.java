@@ -14,10 +14,19 @@ public class DatabaseHelper {
             Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e){
-            e.printStackTrace();
+            System.out.println("Problem in Loading MySql Driver "+e.getMessage());
         }
     }
-        public static Connection getConnection() throws SQLException {
-            return DriverManager.getConnection(url, user, password);
+        public static Connection getConnection() {
+            try {
+                System.out.println("Connecting to Database...");
+                Connection c = DriverManager.getConnection(url, user, password);
+                System.out.println("Database connected successfully");
+                return c;
+            }
+            catch (SQLException e){
+                System.out.println("Failed to create connection with Database "+e.getMessage());
+            }
+            return null;
         }
 }

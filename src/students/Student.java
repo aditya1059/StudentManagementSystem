@@ -18,7 +18,7 @@ public class Student {
         return this.city;
     }
 
-    public int getDeptno() {
+    public int getDeptNo() {
         return this.deptNo;
     }
 
@@ -34,9 +34,9 @@ public class Student {
         this.city=city;
     }
 
-    public void setDeptno(int deptno) {
-        this.deptNo=deptno;
+    public void setDeptNo(int deptNo) {
+        this.deptNo=deptNo;
     }
 
-    // Constructor, Getters and Setters
+
 }
